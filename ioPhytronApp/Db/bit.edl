@@ -1,0 +1,147 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 474
+y 569
+w 125
+h 40
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 72
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 29
+ctlBgColor1 index 2
+ctlBgColor2 index 2
+topShadowColor index 1
+botShadowColor index 6
+title "Auto Save"
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 125
+h 20
+lineColor index 4
+fill
+fillColor index 4
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 3
+y 18
+w 84
+h 20
+lineColor index 15
+lineAlarm
+fillColor index 15
+fillAlarm
+lineWidth 2
+alarmPv "$(DEVN):setBit$(PORT):$(ADDR)"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 2
+y 2
+w 89
+h 14
+controlPv "$(DEVN):setBit$(PORT):$(ADDR).DESC"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 29
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 22
+w 78
+h 16
+fgColor index 14
+bgColor index 2
+selectColor index 2
+inconsistentColor index 2
+topShadowColor index 1
+botShadowColor index 6
+controlPv "$(DEVN):setBit$(PORT):$(ADDR)"
+indicatorPv "$(DEVN):rdbkBit$(PORT):$(ADDR)"
+font "helvetica-bold-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 105
+y 23
+w 20
+h 14
+controlPv "$(DEVN):stBit$(PORT):$(ADDR)"
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 29
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 23
+w 14
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "rd:"
+}
+autoSize
+endObjectProperties
+

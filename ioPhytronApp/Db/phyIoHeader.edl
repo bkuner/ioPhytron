@@ -1,0 +1,229 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2441
+y 833
+w 1100
+h 30
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 72
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 29
+ctlBgColor1 index 2
+ctlBgColor2 index 2
+topShadowColor index 1
+botShadowColor index 6
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 122
+y 2
+w 207
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Test of phytronIoControl"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 519
+y 4
+w 76
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "ASYN Debug"
+}
+autoSize
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 600
+y 2
+w 62
+h 19
+fgColor index 14
+bgColor index 2
+topShadowColor index 1
+botShadowColor index 6
+font "helvetica-medium-r-14.0"
+buttonLabel "DIG1"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "asynRecord.edl"
+}
+symbols {
+  0 "P=test:,R=DIG1,PORT=DIG1"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 665
+y 2
+w 62
+h 19
+fgColor index 14
+bgColor index 2
+topShadowColor index 1
+botShadowColor index 6
+font "helvetica-medium-r-14.0"
+buttonLabel "DIG2"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "asynRecord.edl"
+}
+symbols {
+  0 "P=test:,R=DIG2,PORT=DIG2"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 730
+y 2
+w 62
+h 19
+fgColor index 14
+bgColor index 2
+topShadowColor index 1
+botShadowColor index 6
+font "helvetica-medium-r-14.0"
+buttonLabel "AIO1"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "asynRecord.edl"
+}
+symbols {
+  0 "P=test:,R=AIO1,PORT=AIO1"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 795
+y 2
+w 62
+h 19
+fgColor index 14
+bgColor index 2
+topShadowColor index 1
+botShadowColor index 6
+font "helvetica-medium-r-14.0"
+buttonLabel "AIO2"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "asynRecord.edl"
+}
+symbols {
+  0 "P=test:,R=AIO2,PORT=AIO2"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 935
+y 2
+w 80
+h 19
+fgColor index 14
+bgColor index 2
+inconsistentColor index 2
+topShadowColor index 1
+botShadowColor index 6
+controlPv "PHYIO:stBitDIG2:8.SCAN"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1020
+y 3
+w 68
+h 17
+fgColor index 14
+onColor index 2
+offColor index 2
+topShadowColor index 1
+botShadowColor index 6
+controlPv "PHYIO:stBitDIG2:8.PROC"
+pressValue "1"
+onLabel "PROC"
+offLabel "PROC"
+3d
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 867
+y 4
+w 66
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Scan Inputs"
+}
+autoSize
+endObjectProperties
+

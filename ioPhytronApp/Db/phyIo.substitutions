@@ -1,0 +1,52 @@
+file intOut.template {
+pattern{REC,DEVN,SNAME ,DESC          ,DTYP        ,PORT,ADDR,REASON,FLNK}
+  { longout,PHYIO,set1Ao1 ,"Card 1 AO 1" ,asynInt32,AIO1,1   ,AOUT   ,""}
+  { longout,PHYIO,set1Ao2 ,"Card 1 AO 2" ,asynInt32,AIO1,2   ,AOUT   ,""}
+  { longout,PHYIO,set1Ao3 ,"Card 1 AO 3" ,asynInt32,AIO1,3   ,AOUT   ,""}
+  { longout,PHYIO,set1Ao4 ,"Card 1 AO 4" ,asynInt32,AIO1,4   ,AOUT   ,""}
+  { longout,PHYIO,set1Dig ,"Card 1 DOUT" ,asynInt32,DIG1,0   ,DOUT   ,""}
+}
+file intIn.template {
+pattern{REC,DEVN,SNAME ,DESC          ,DTYP        ,PORT,ADDR,REASON,FLNK}
+  { longin ,PHYIO,in1Ai1  ,"Card 1 AI 1" ,asynInt32,AIO1,1   ,AIN    ,"PHYIO:in1Ai2"}
+  { longin ,PHYIO,in1Ai2  ,"Card 1 AI 2" ,asynInt32,AIO1,2   ,AIN    ,"PHYIO:in1Ai3"}
+  { longin ,PHYIO,in1Ai3  ,"Card 1 AI 3" ,asynInt32,AIO1,3   ,AIN    ,"PHYIO:in1Ai4"}
+  { longin ,PHYIO,in1Ai4  ,"Card 1 AI 4" ,asynInt32,AIO1,4   ,AIN    ,"PHYIO:in1Dig"}
+  { longin ,PHYIO,in1Dig  ,"Card 1 DIN"  ,asynInt32,DIG1,0   ,DIN    ,"PHYIO:rdbk1Dig"}
+  { longin ,PHYIO,rdbk1Dig,"Card 1 DOUT" ,asynInt32,DIG1,0   ,DOUT   ,"PHYIO:in2Ai1"}
+}
+file intOut.template {
+pattern{REC,DEVN,SNAME ,DESC          ,DTYP        ,PORT,ADDR,REASON,FLNK}
+  { longout,PHYIO,set2Ao1 ,"Card 2 AO 1" ,asynInt32,AIO2,1   ,AOUT   ,""}
+  { longout,PHYIO,set2Ao2 ,"Card 2 AO 3" ,asynInt32,AIO2,2   ,AOUT   ,""}
+  { longout,PHYIO,set2Ao3 ,"Card 2 AO 3" ,asynInt32,AIO2,3   ,AOUT   ,""}
+  { longout,PHYIO,set2Ao4 ,"Card 2 AO 4" ,asynInt32,AIO2,4   ,AOUT   ,""}
+  { longout,PHYIO,set2Dig ,"Card 2 DOUT" ,asynInt32,DIG2,0   ,DOUT   ,""}
+}
+file intIn.template {
+pattern{REC,DEVN,SNAME ,DESC          ,DTYP        ,PORT,ADDR,REASON,FLNK}
+  { longin ,PHYIO,in2Ai1  ,"Card 2 AIN 1",asynInt32,AIO2,1   ,AIN    ,"PHYIO:in2Ai2"}
+  { longin ,PHYIO,in2Ai2  ,"Card 2 AIN 2",asynInt32,AIO2,2   ,AIN    ,"PHYIO:in2Ai3"}
+  { longin ,PHYIO,in2Ai3  ,"Card 2 AIN 3",asynInt32,AIO2,3   ,AIN    ,"PHYIO:in2Ai4"}
+  { longin ,PHYIO,in2Ai4  ,"Card 2 AIN 4",asynInt32,AIO2,4   ,AIN    ,"PHYIO:in2Dig"}
+  { longin ,PHYIO,in2Dig  ,"Card 2 DIN"  ,asynInt32,DIG2,0   ,DIN    ,"PHYIO:rdbk2Dig"}
+  { longin ,PHYIO,rdbk2Dig,"Card 2 DOUT" ,asynInt32,DIG2,0   ,DOUT   ,""}
+}
+file bit.template {
+pattern{DEVN,PORT,ADDR,FLNK, SCAN}
+     { PHYIO,DIG2,1   ,"$(DEVN):stBit$(PORT):2",""}
+     { PHYIO,DIG2,2   ,"$(DEVN):stBit$(PORT):3",""}
+     { PHYIO,DIG2,3   ,"$(DEVN):stBit$(PORT):4",""}
+     { PHYIO,DIG2,4   ,"$(DEVN):stBit$(PORT):5",""}
+     { PHYIO,DIG2,5   ,"$(DEVN):stBit$(PORT):6",""}
+     { PHYIO,DIG2,6   ,"$(DEVN):stBit$(PORT):7",""}
+     { PHYIO,DIG2,7   ,"PHYIO:in1Ai1"            ,""}
+     { PHYIO,DIG2,8   ,"$(DEVN):stBit$(PORT):1","Passive"}
+}
+file aio.template {
+pattern{DEVN,PORT,ADDR,FLNK, SCAN}
+     { PHYIO,AIO2,1   ,""  ,""}
+}
+file cmd.template {
+  { DEVN=MO1, PORT=DIG1}
+}

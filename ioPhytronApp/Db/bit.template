@@ -1,0 +1,24 @@
+record(bo,"$(DEVN):setBit$(PORT):$(ADDR)") {
+    field(DESC,"wr $(PORT).B$(ADDR)")
+    field(DTYP,"asynInt32")
+    field(OUT,"@asyn($(PORT),$(ADDR))DOUT")
+    field(ZNAM,"off")
+    field(ONAM,"On")
+    field(FLNK,"$(DEVN):stBit$(PORT):$(ADDR)")
+}
+record(bi,"$(DEVN):stBit$(PORT):$(ADDR)") {
+    field(DESC,"rd $(PORT).B$(ADDR)")
+    field(DTYP,"asynInt32")
+    field(INP,"@asyn($(PORT),$(ADDR))DIN")
+    field(SCAN,"$(SCAN=)")
+    field(ZNAM,"off")
+    field(ONAM,"On")
+    field(FLNK,"$(DEVN):rdbkBit$(PORT):$(ADDR)")
+}
+record(bi,"$(DEVN):rdbkBit$(PORT):$(ADDR)") {
+    field(DTYP,"asynInt32")
+    field(INP,"@asyn($(PORT),$(ADDR))DOUT")
+    field(ZNAM,"off")
+    field(ONAM,"On")
+    field(FLNK,"$(FLNK=)")
+}

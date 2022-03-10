@@ -1,0 +1,17 @@
+# command interface
+record(stringout,"$(DEVN):setCmd") {
+    field(DESC,"$(DEVN) Command")
+    field(DTYP,"asynOctetWrite")
+    field(OUT, "@asyn($(PORT),0)CMD")
+    field(FLNK,"$(DEVN):rdCmd")
+}
+record(stringin,"$(DEVN):rdCmd") {
+    field(DESC,"cmd response")
+    field(DTYP,"asynOctetRead")
+    field(INP,"@asyn($(PORT),0)CMD")
+    field(FLNK,"$(DEVN):rdIntCmd")
+}
+record(longin,"$(DEVN):rdIntCmd") {
+    field(DESC,"cmd response as int")
+    field(INP,"$(DEVN):rdCmd")
+}

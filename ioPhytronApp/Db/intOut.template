@@ -1,0 +1,6 @@
+record($(REC),"$(DEVN):$(SNAME)") {
+    field(DESC,"$(DESC=)")
+    field(DTYP,"$(DTYP=asynInt32)")
+    field(OUT,"@asyn($(PORT),$(ADDR))$(REASON)")
+    field(FLNK,"$(FLNK=)")
+}

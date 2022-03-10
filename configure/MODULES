@@ -1,0 +1,11 @@
+{
+    "alias": [
+        "BASE:EPICS_BASE"
+    ],
+    "module": [
+        "BASE:R3-15-6-bessy5",
+        "ASYN:R4-35-bessy2",
+        "BESSYRULES:R3-11-4"
+    ],
+    "buildtag-stem": "TESTSTAND"
+}
