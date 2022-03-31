@@ -22,7 +22,7 @@ Send arbitrary commands to the phyMotion device
 
 ## Reading EPICS records: ai, longin, bi, mbbi
 
-The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR is the channel number
+The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR is the channel number. The reasons AOUT,AIN will readback set values.
 
 - PORT: CARD_PORT, means card numer in the chassis count from left to right
 - ADDR: In- Output channel number n=1,2..
@@ -32,10 +32,12 @@ The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR i
   - AIN: n>0 "ADm.nR" read analog channel
   - AOUT "DAm.n" Readback channel
   
-`record($(REC),"$(PV)") {
+```
+record($(REC),"$(PV)") {
     field(DTYP,"$(DTYP=asynInt32)")
     field(INP,"@asyn($(PORT),$(ADDR))$(REASON)")
-}`
+}
+```
 
 ## Writing EPICS records: ao, longout, bo, mbbo
 
@@ -47,14 +49,17 @@ The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR i
   - DOUT: n=0: "AGmSvalue" Set all channels of card m, n>0 "AZm.nSz" set a single bit to 
   - AOUT "DAm.n=value" Set channel
   
-`record($(REC),"$(PV)") {
+```
+record($(REC),"$(PV)") {
     field(DTYP,"$(DTYP=asynInt32)")
     field(INP,"@asyn($(PORT),$(ADDR))$(REASON)")
-}`
+}
+```
 
 ## Command interface by stringout, stringin
 
-`record(stringout,"$(DEVN):setCmd") {
+```
+record(stringout,"$(DEVN):setCmd") {
     field(DESC,"$(DEVN) Command")
     field(DTYP,"asynOctetWrite")
     field(OUT, "@asyn($(PORT),0)CMD")
@@ -69,6 +74,8 @@ record(stringin,"$(DEVN):rdCmd") {
 record(longin,"$(DEVN):rdIntCmd") {
     field(DESC,"cmd response as int")
     field(INP,"$(DEVN):rdCmd")
-}`
+}
+```
+
 
 
