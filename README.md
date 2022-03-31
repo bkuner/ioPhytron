@@ -10,7 +10,7 @@ Create port for a single card.
 - timeout in ms
 - Init commands is a list of phyLogic commands
 
-`phytronCreateIoCtrl( "IP_PORT","CARD_PORT", cardNr, timeout,"init;by;phyLogic;commands")`
+`phytronCreateIoCtrl( "IP_PORT", "CARD_PORT", cardNr, timeout, "init;by;phyLogic;commands")`
 
 Show all installed cards. use CARD_PORT is one of the created card_ports.
 
@@ -20,7 +20,9 @@ Send arbitrary commands to the phyMotion device
 
 `phycmd("list;of;commands")`
 
-## Reading EPICS records: ai,longin, bi,mbbi
+## Reading EPICS records: ai, longin, bi, mbbi
+
+The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR is the channel number
 
 - PORT: CARD_PORT, means card numer in the chassis count from left to right
 - ADDR: In- Output channel number n=1,2..
@@ -35,7 +37,9 @@ Send arbitrary commands to the phyMotion device
     field(INP,"@asyn($(PORT),$(ADDR))$(REASON)")
 }`
 
-## Writing EPICS records: ao,longout, bo, mbbo
+## Writing EPICS records: ao, longout, bo, mbbo
+
+The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR is the channel number
 
 - PORT: CARD_PORT, means card numer in the chassis count from left to right
 - ADDR: In- Output channel number n=1,2..
@@ -48,7 +52,7 @@ Send arbitrary commands to the phyMotion device
     field(INP,"@asyn($(PORT),$(ADDR))$(REASON)")
 }`
 
-## Command interface: stringout, stringin
+## Command interface by stringout, stringin
 
 `record(stringout,"$(DEVN):setCmd") {
     field(DESC,"$(DEVN) Command")
