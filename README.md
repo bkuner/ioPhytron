@@ -52,7 +52,7 @@ The card number m is defined by the phytronCreateIoCtrl cardNr parameter, ADDR i
 ```
 record($(REC),"$(PV)") {
     field(DTYP,"$(DTYP=asynInt32)")
-    field(INP,"@asyn($(PORT),$(ADDR))$(REASON)")
+    field(OUT,"@asyn($(PORT),$(ADDR))$(REASON)")
 }
 ```
 
